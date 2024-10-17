@@ -1,66 +1,67 @@
-import { useState, useEffect, ChangeEvent } from "react";
+// import { useState, useEffect, ChangeEvent } from "react";
 
-import logoImage from "../assets/logo.svg";
-import { TODO_LIST } from "./initial-state";
-import { ITodoTypes } from "./types";
+// import logoImage from "../assets/logo.svg";
+// import { TODO_LIST } from "./initial-state";
+// import { ITodoTypes } from "./types";
 
 import "./index.css";
 
 function Todo() {
-  const [items, setItems] = useState(TODO_LIST);
-  const [searchInputValue, setSearchInputValue] = useState("");
-  const [search, setSearch] = useState("");
+  // const [items, setItems] = useState(TODO_LIST);
+  // const [searchInputValue, setSearchInputValue] = useState("");
+  // const [search, setSearch] = useState("");
 
-  const handleChange = (event: ChangeEvent<unknown>) => {
-    setSearchInputValue(event.target.value);
-  };
+  // const handleChange = (event: ChangeEvent<unknown>) => {
+  //   setSearchInputValue(event.target.value);
+  // };
 
-  const handleSearch = (event) => {
-    event.preventDefault();
-    setSearch(searchInputValue);
-  };
+  // const handleSearch = (event) => {
+  //   event.preventDefault();
+  //   setSearch(searchInputValue);
+  // };
 
-  const handleDeleteTask = (id: number) => {
-    const editedItems = [];
+  // const handleDeleteTask = (id: number) => {
+  //   const editedItems = [];
 
-    items.map((item) => {
-      if (item.id !== id) {
-        editedItems.push(item);
-      }
-    })
+  //   items.map((item) => {
+  //     if (item.id !== id) {
+  //       editedItems.push(item);
+  //     }
+  //   })
 
-    setItems(editedItems);
-  };
+  //   setItems(editedItems);
+  // };
 
-  const handleChangeTaskStatus = (id: string, status: ITodoTypes) => {
-    const reversedStatus = status === "pending" ? "pending" : "done";
-    const editedItems = [];
+  // const handleChangeTaskStatus = (id: string, status: ITodoTypes) => {
+  //   const reversedStatus = status === "pending" ? "pending" : "done";
+  //   const editedItems = [];
 
-    for (let i = 0; i < items.length; i++) {
-      if (items[i].id === id) {
-        editedItems.push({
-          ...items[i],
-          status: reversedStatus,
-        });
-      } else {
-        editedItems.push(items[i]);
-      }
-    }
+  //   for (let i = 0; i < items.length; i++) {
+  //     if (items[i].id === id) {
+  //       editedItems.push({
+  //         ...items[i],
+  //         status: reversedStatus,
+  //       });
+  //     } else {
+  //       editedItems.push(items[i]);
+  //     }
+  //   }
 
-    setItems(editedItems);
-  };
+  //   setItems(editedItems);
+  // };
 
-  useEffect(() => {
-    if (search || items)
-      setItems((currentItems) => [
-        ...currentItems,
-        ...TODO_LIST.filter((item) => item.title.includes(search)),
-      ]);
-  }, [search, items]);
+  // useEffect(() => {
+  //   if (search || items)
+  //     setItems((currentItems) => [
+  //       ...currentItems,
+  //       ...TODO_LIST.filter((item) => item.title.includes(search)),
+  //     ]);
+  // }, [search, items]);
 
   return (
     <main id="page" className="todo">
-      <div>
+      página do todo
+      {/* <div>
         <img src={logoImage} alt="Cora" title="Cora"></img>
         <h1>Weekly to-do list &#128467;</h1>
         <h2>
@@ -137,7 +138,7 @@ function Todo() {
             })}
           </ul>
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }

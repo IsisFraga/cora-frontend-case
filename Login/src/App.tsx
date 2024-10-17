@@ -3,7 +3,7 @@ import React from 'react';
 interface Props {
 }
 
-export const Component: React.FC<Props> = (props) => {
+export const LoginApp: React.FC<Props> = (props) => {
   return (
     <div>
       sou login
@@ -14,4 +14,4 @@ export const Component: React.FC<Props> = (props) => {
 export const loader = async () => {
 };
 
-export default { Component, loader };
+export default { LoginApp, loader };

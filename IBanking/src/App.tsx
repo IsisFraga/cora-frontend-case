@@ -3,10 +3,10 @@ import React from 'react';
 interface Props {
 }
 
-export const Component: React.FunctionComponent<Props> = (props) => {
+export const IBanking: React.FunctionComponent<Props> = () => {
   return (
     <div>
-      sou ibanking
+      sou ibanking 
     </div>
   )
 };
@@ -14,4 +14,4 @@ export const Component: React.FunctionComponent<Props> = (props) => {
 export const loader = async () => {
 };
 
-export default { Component, loader };
+export default { IBanking, loader };
