@@ -1,36 +1,66 @@
-import logoImage from "./assets/logo.svg";
-// import Todo from "./Todo";
-// import { IBanking } from "./IBanking";
-
+import React, { Suspense, lazy } from "react";
+import {
+  HashRouter,
+  Route,
+  Routes,
+  Link,
+  useLoaderData,
+} from "react-router-dom";
 import "./App.css";
+import { Home } from "./pages/Home";
+
+const Todo = lazy(() => import('todoApp/App'));
+const TodoLoader = () => import('todoApp/App').then(module => module.loader);
+
+const Bank = lazy(() => import('bankApp/App'));
+const BankLoader = () => import('bankApp/App').then(module => module.loader);
+
+const TodoWrapper = () => {
+  const data = useLoaderData();
+  return (
+    <Suspense fallback={<div>Carregando Todo...</div>}>
+      <Todo data={data} />
+    </Suspense>
+  );
+};
+
+const BankWrapper = () => {
+  const data = useLoaderData();
+  return (
+    <Suspense fallback={<div>Carregando IBanking...</div>}>
+      <Bank data={data} />
+    </Suspense>
+  );
+};
+
 
 function App() {
   return (
-    <main id="page">
-      <div>
-        <img src={logoImage} alt="Cora" title="Cora"></img>
-        <h1>Hey There &#128075;</h1>
-        <h2>Tenha um ótimo teste!!!</h2>
-        <p>
-          <strong>Vamos começar?</strong> Como você faria os botões abaixo
-          abrirem as suas respectivas páginas? (Comece pela{" "}
-          <strong>TODO LIST</strong>, pois nela contem os próximos passos)
-        </p>
-        <p className="disclaimer">
-          &#9888; Você pode encontrar alguns <strong>erros</strong> no meio do
-          caminho, não desanime e fique atento para conseguir{" "}
-          <strong>visualizar</strong> e <strong>renderizar</strong> as páginas.
-        </p>
-        <ul className="buttons">
-          <li>
-            <a href="#">TO-DO LIST</a>
-          </li>
-          <li>
-            <a href="#">IBANKING</a>
-          </li>
-        </ul>
-      </div>
-    </main>
+    <HashRouter>
+      <main id="page">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/todo"
+            element={
+              <Suspense fallback={<div>Carregando Todo...</div>}>
+                <TodoWrapper />
+              </Suspense>
+            }
+            loader={TodoLoader}
+          />
+          <Route
+            path="/bank"
+            element={
+              <Suspense fallback={<div>Carregando IBanking...</div>}>
+                <BankWrapper />
+              </Suspense>
+            }
+            loader={BankLoader}
+          />
+        </Routes>
+      </main>
+    </HashRouter>
   );
 }
 
