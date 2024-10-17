@@ -1,16 +1,9 @@
 {
   "name": "cora-frontend-case",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "host",
-      "ibanking",
-      "login",
-      "todo"
-    ]
-  },
   "version": "0.0.0",
   "scripts": {
+    "start": "pnpm run --filter \"./Host\" --filter \"./IBanking\" --filter \"./Login\" --filter \"./Todo\" start",    
     "dev": "vite & npm run server",
     "server": "nodemon api.js",
     "build": "tsc && vite build",
