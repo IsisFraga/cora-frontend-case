@@ -1,66 +1,41 @@
-import React, { Suspense, lazy } from "react";
-import {
-  HashRouter,
-  Route,
-  Routes,
-  Link,
-  useLoaderData,
-} from "react-router-dom";
-import "./App.css";
-import { Home } from "./pages/Home";
+import { lazy, Suspense } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Home } from './pages/Home'
 
 const Todo = lazy(() => import('todoApp/App'));
 const TodoLoader = () => import('todoApp/App').then(module => module.loader);
 
-const Bank = lazy(() => import('bankApp/App'));
-const BankLoader = () => import('bankApp/App').then(module => module.loader);
+const IBanking = lazy(() => import('ibankingApp/App'));
+const IBankingLoader = () => import('ibankingApp/App').then(module => module.loader);
 
-const TodoWrapper = () => {
-  const data = useLoaderData();
-  return (
-    <Suspense fallback={<div>Carregando Todo...</div>}>
-      <Todo data={data} />
-    </Suspense>
-  );
-};
-
-const BankWrapper = () => {
-  const data = useLoaderData();
-  return (
-    <Suspense fallback={<div>Carregando IBanking...</div>}>
-      <Bank data={data} />
-    </Suspense>
-  );
-};
-
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/todo",
+    element: (
+      <Suspense fallback={<div>Carregando Todo...</div>}>
+        <Todo />
+      </Suspense>
+    ),
+    loader: TodoLoader,
+  },
+  {
+    path: "/ibanking",
+    element: (
+      <Suspense fallback={<div>Carregando IBanking...</div>}>
+        <IBanking />
+      </Suspense>
+    ),
+    loader: IBankingLoader,
+  },
+]);
 
 function App() {
   return (
-    <HashRouter>
-      <main id="page">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/todo"
-            element={
-              <Suspense fallback={<div>Carregando Todo...</div>}>
-                <TodoWrapper />
-              </Suspense>
-            }
-            loader={TodoLoader}
-          />
-          <Route
-            path="/bank"
-            element={
-              <Suspense fallback={<div>Carregando IBanking...</div>}>
-                <BankWrapper />
-              </Suspense>
-            }
-            loader={BankLoader}
-          />
-        </Routes>
-      </main>
-    </HashRouter>
+    <RouterProvider router={router} />
   );
 }
 
