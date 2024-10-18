@@ -11,7 +11,5 @@ export const LoginApp: React.FC<Props> = (props) => {
   )
 };
 
-export const loader = async () => {
-};
 
-export default { LoginApp, loader };
+export default LoginApp;

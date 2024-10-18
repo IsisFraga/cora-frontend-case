@@ -11,7 +11,5 @@ export const IBanking: React.FunctionComponent<Props> = () => {
   )
 };
 
-export const loader = async () => {
-};
 
-export default { IBanking, loader };
+export default IBanking;

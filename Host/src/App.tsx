@@ -1,14 +1,11 @@
 import { lazy, Suspense } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { Home } from './pages/Home'
 
-const Todo = lazy(() => import('todoApp/App'));
-const TodoLoader = () => import('todoApp/App').then(module => module.loader);
-
+const Todo = lazy(() => import('todoApp/App'))
 const IBanking = lazy(() => import('ibankingApp/App'));
-const IBankingLoader = () => import('ibankingApp/App').then(module => module.loader);
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Home />,
@@ -20,7 +17,6 @@ const router = createBrowserRouter([
         <Todo />
       </Suspense>
     ),
-    loader: TodoLoader,
   },
   {
     path: "/ibanking",
@@ -29,13 +25,16 @@ const router = createBrowserRouter([
         <IBanking />
       </Suspense>
     ),
-    loader: IBankingLoader,
   },
 ]);
 
 function App() {
+
   return (
-    <RouterProvider router={router} />
+
+    <div>
+        <RouterProvider router={router} />
+    </div>
   );
 }
 
