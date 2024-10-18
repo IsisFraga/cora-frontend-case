@@ -8,10 +8,7 @@ interface TodoListItemProps {
   onChangeTaskStatus: (id: string) => void;
 }
 
-export const TodoListItem: React.FC<TodoListItemProps> = ({ item, index, onDeleteTask, onChangeTaskStatus }) => {
-  const returnItemStatus = item.status === 'done' ? 'pending' : 'done'
-  
-  return (
+export const TodoListItem: React.FC<TodoListItemProps> = ({ item, index, onDeleteTask, onChangeTaskStatus }) => (
   <li>
     <span>
       {index + 1}
@@ -32,14 +29,14 @@ export const TodoListItem: React.FC<TodoListItemProps> = ({ item, index, onDelet
           ))}
         </div>
       )}
-    <div className="todo__actions">
+      <div className="todo__actions">
         <button onClick={() => onDeleteTask(item.id)}>
           Delete
         </button>
         <button onClick={() => onChangeTaskStatus(item.id)}>
-          Change to {returnItemStatus}
+          Change to {item.status === 'done' ? 'pending' : 'done'}
         </button>
       </div>
     </div>
   </li>
-)};
+);

@@ -1,30 +1,32 @@
 import React from 'react';
 import { TodoListItem } from '../TodoListItem';
-import { TodoItem } from '../../types';
+import { useTodoStore } from '../../store';
 
-interface TodoListProps {
-  filteredTodos: TodoItem[];
-  onDeleteTask: (id: string) => void;
-  onChangeTaskStatus: (id: string) => void;
-}
+export const TodoList: React.FC = () => {
+  const { todos, searchTerm, deleteTodo, toggleTodoStatus } = useTodoStore();
 
-export const TodoList: React.FC<TodoListProps> = ({ filteredTodos, onDeleteTask, onChangeTaskStatus }) => (
-  <ul className="todo__list">
-    {filteredTodos.length === 0 ? (
-      <li className="todo__item">
-        <strong>Ops!!!</strong>Nenhum resultado foi encontrado
-        &#128533;
-      </li>
-    ) : (
-      filteredTodos.map((item, index) => (
-        <TodoListItem
-          key={item.id}
-          item={item}
-          index={index}
-          onDeleteTask={onDeleteTask}
-          onChangeTaskStatus={onChangeTaskStatus}
-        />
-      ))
-    )}
-  </ul>
-);
+  const filteredTodos = todos.filter((item) =>
+    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
+    <ul className="todo__list">
+      {filteredTodos.length === 0 ? (
+        <li className="todo__item">
+          <strong>Ops!!!</strong> Nenhum resultado foi encontrado
+          &#128533;
+        </li>
+      ) : (
+        filteredTodos.map((item, index) => (
+          <TodoListItem
+            key={item.id}
+            item={item}
+            index={index}
+            onDeleteTask={deleteTodo}
+            onChangeTaskStatus={toggleTodoStatus}
+          />
+        ))
+      )}
+    </ul>
+  );
+};

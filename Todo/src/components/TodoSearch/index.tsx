@@ -1,13 +1,11 @@
 import React from 'react';
+import { useTodoStore } from '../../store';
 
-interface TodoSearchProps {
-  searchInputValue: string;
-  setSearchInputValue: (value: string) => void;
-}
+export const TodoSearch: React.FC = () => {
+  const { searchTerm, setSearchTerm } = useTodoStore();
 
-export const TodoSearch: React.FC<TodoSearchProps> = ({ searchInputValue, setSearchInputValue }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchInputValue(event.target.value);
+    setSearchTerm(event.target.value);
   };
 
   const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
@@ -20,7 +18,7 @@ export const TodoSearch: React.FC<TodoSearchProps> = ({ searchInputValue, setSea
       <input
         id="search"
         placeholder="busca por texto..."
-        value={searchInputValue}
+        value={searchTerm}
         onChange={handleChange}
       />
       <button type="submit">buscar</button>

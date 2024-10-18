@@ -1,13 +1,9 @@
 import React from 'react';
+import logoImage from '../../assets/logo.svg';
 
-interface TodoHeaderProps {
-  logoSrc: string;
-  alt: string;
-}
-
-export const TodoHeader: React.FC<TodoHeaderProps> = ({ logoSrc, alt }) => (
+export const TodoHeader: React.FC = () => (
   <>
-    <img src={logoSrc} alt={alt} />
+    <img src={logoImage} alt="logo da Cora" />
     <h1>Weekly to-do list &#128467;</h1>
     <h2>
       Bem-vindo ao nosso produto <i>fake</i> de <strong>to-do</strong> list
