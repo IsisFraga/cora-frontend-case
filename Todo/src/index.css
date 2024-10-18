@@ -5,6 +5,7 @@
 
 .todo__search {
   display: flex;
+  align-items: center;
   margin-bottom: 10px;
 }
 
@@ -128,4 +129,10 @@
   color: var(--color-main);
   border: 1px solid var(--color-main);
   background-color: transparent;
+}
+
+.todo__item {
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
