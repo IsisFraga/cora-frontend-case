@@ -1,6 +1,6 @@
 export const TODO_LIST = [
   {
-    id: "5ce31291-d06b-4940-9d14-0f41d116fe76",
+    id: crypto.randomUUID(), 
     ref: "1",
     title: "Visualizar to-do list corretamente",
     description: (
@@ -18,7 +18,7 @@ export const TODO_LIST = [
     required: true,
   },
   {
-    id: "bcd69907-601f-461b-a8c4-4c3fc3b827e9",
+    id: crypto.randomUUID(),
     ref: "1",
     title: "Resolver to-do bugs",
     description: (
@@ -43,7 +43,7 @@ export const TODO_LIST = [
     required: true,
   },
   {
-    id: "ea82af08-ffd1-41fe-9c30-b760ae7ee8c9",
+    id: crypto.randomUUID(),
     ref: "1",
     title: "Página de login - CSS",
     description: (
@@ -62,7 +62,7 @@ export const TODO_LIST = [
     ],
   },
   {
-    id: "ea82af08-ffd1-41fe-9c60-b760ae7ee8ce",
+    id: crypto.randomUUID(),
     ref: "1",
     title: "Página de login - Integração",
     description: (
@@ -85,7 +85,7 @@ export const TODO_LIST = [
     ],
   },
   {
-    id: "9c3fd0b8-2cc2-433b-b80c-e12ee4c0524e",
+    id: crypto.randomUUID(),
     ref: "1",
     title: "Página de lista de transações",
     description: (
@@ -98,7 +98,7 @@ export const TODO_LIST = [
         <br />O contrato esta no <strong>README.md</strong> do projeto.
       </>
     ),
-    status: "pendin",
+    status: "pending",
     required: true,
     links: [
       {
@@ -112,7 +112,7 @@ export const TODO_LIST = [
     ],
   },
   {
-    id: "5ce31291-d06b-4940-9d14-0f41d116fe76",
+    id: crypto.randomUUID(),
     ref: "1",
     title: "Filtro por tipo de transação",
     description: (
@@ -140,7 +140,7 @@ export const TODO_LIST = [
     ],
   },
   {
-    id: "be4f2532-aca4-46c8-84b8-c9fe41d7fb7f",
+    id: crypto.randomUUID(),
     ref: "1",
     title: "Extra",
     description: (
