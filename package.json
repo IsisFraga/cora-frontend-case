@@ -2,6 +2,14 @@
   "name": "cora-frontend-case",
   "private": true,
   "version": "0.0.0",
+  "workspaces": {
+    "packages": [
+      "host",
+      "todo",
+      "ibanking",
+      "login"
+    ]
+  },
   "scripts": {
     "start": "pnpm run --filter \"./Host\" --filter \"./IBanking\" --filter \"./Login\" --filter \"./Todo\" start",    
     "dev": "vite & npm run server",
