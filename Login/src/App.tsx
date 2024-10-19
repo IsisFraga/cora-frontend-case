@@ -6,7 +6,7 @@ import arrowRightImage from './assets/img/arrow-right.svg';
 import './index.css';
 
 interface LoginAppProps {
-  onLoginSuccess?: () => void;
+  onLoginSuccess: () => void;
 }
 
 const LoginApp: React.FC<LoginAppProps> = ({ onLoginSuccess }) => {
@@ -52,7 +52,7 @@ const LoginApp: React.FC<LoginAppProps> = ({ onLoginSuccess }) => {
 
     try {
       await handleAuth();
-      onLoginSuccess && onLoginSuccess();
+      onLoginSuccess();
     } catch (error) {
       setLocalError('Falha no login. Por favor tente novamente.');
     }
