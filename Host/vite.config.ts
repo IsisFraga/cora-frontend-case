@@ -12,7 +12,7 @@ export default defineConfig({
         ibankingApp: 'http://localhost:5002/assets/remoteEntry.js',
         loginApp: 'http://localhost:5003/assets/remoteEntry.js',
       },
-      shared: ['react', 'react-dom', 'react-router-dom']
+      shared: ['react', 'react-dom', 'react-router-dom', 'zustand']
     })
   ],
   build: {
@@ -22,12 +22,12 @@ export default defineConfig({
     cssCodeSplit: false
   },
   server: {
-    port: 3000,
+    port: 3001,
     strictPort: true,
     cors: true
   },
   preview: {
-    port: 3000,
+    port: 3001,
     strictPort: true,
     cors: true
   }
