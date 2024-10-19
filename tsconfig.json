@@ -18,6 +18,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "Host/src/App.tsx", "IBanking", "Todo", "Host/src/main.tsx", "Host/vite-env.d.ts", "custom.d.ts", "Host/src/remote-types.d.ts"],
+  "include": ["Host/src/App.tsx", "IBanking", "Todo", "Host/src/main.tsx", "Host/vite-env.d.ts", "custom.d.ts", "Host/src/remote-types.d.ts", "Login"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
