@@ -10,8 +10,9 @@ export default defineConfig({
       filename: 'remoteEntry.js',
       exposes: {
         './App': './src/App.tsx',
+        './store': './src/store/index.ts',
       },
-      shared: ['react', 'react-dom'],
+      shared: ['react', 'react-dom', 'zustand']
     }),
   ],
   build: {
