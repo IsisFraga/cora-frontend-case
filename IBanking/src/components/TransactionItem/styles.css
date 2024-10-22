@@ -1,0 +1,63 @@
+.transaction-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 1rem;
+  line-height: 24px;
+  font-family: var(--font-avenir-light);
+  align-items: center;
+}
+
+.transaction-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.transaction-item__icon {
+  display: none;
+}
+
+.credit {
+  color: var(--color-blue);
+}
+
+.debit {
+  color: var(--color-medium-gray);
+}
+
+.transaction-item__description,
+.transaction-item__datetime {
+  display: none;
+}
+
+.transaction-item__datetime {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.transaction-item__amount {
+  font-family: var(--font-avenir-medium);
+  text-align: right;
+}
+
+.transaction-item__amount.refund {
+  text-decoration: line-through;
+}
+
+@media (min-width: 674px) {
+  .transaction-item {
+    grid-template-columns: 0.5fr 3fr 3fr 3fr 3fr;
+  }
+
+  .transaction-item__icon {
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .transaction-item__description,
+  .transaction-item__datetime {
+    display: block;
+    color: var(--color-gray);
+  }
+}

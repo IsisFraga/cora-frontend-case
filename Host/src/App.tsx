@@ -4,22 +4,42 @@ import { Home } from './pages/Home';
 import { useLoginStore } from '../../Login/src/store';
 
 const Todo = lazy(() => import('todoApp/App'));
-const IBanking = lazy(() => import('ibankingApp/App'));
+const IBanking = lazy(() => 
+  import('ibankingApp/App')
+    .then(module => ({ default: module.default || module }))
+    .catch(error => {
+      console.error('Error loading IBanking module:', error);
+      return { default: () => <div>Erro para carregar o IBanking</div> };
+    })
+);
 const Login = lazy(() => import('loginApp/App')) as React.ComponentType<{ onLoginSuccess: () => void }>;
 
 const ProtectedRoute: React.FC<{ element: React.ReactNode }> = ({ element }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
   const { checkAuthStatus, getIsAuthenticated } = useLoginStore();
 
   useEffect(() => {
-    checkAuthStatus();
-    setIsAuthenticated(getIsAuthenticated());
-    setIsLoading(false);
+    const init = async () => {
+      try {
+        await checkAuthStatus();
+        setIsAuthenticated(getIsAuthenticated());
+      } catch (err) {
+        setError(err instanceof Error ? err : new Error('Unknown error'));
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    init();
   }, [checkAuthStatus, getIsAuthenticated]);
 
   if (isLoading) {
     return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Erro: {error.message}</div>;
   }
 
   return isAuthenticated ? <>{element}</> : <Navigate to="/login" replace />;
