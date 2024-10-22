@@ -1,0 +1,40 @@
+.transactions {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 1032px;
+}
+
+.transactions__date {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.transactions__group {
+  padding: 2rem 1rem;
+  border: 1px solid #DEE4E9;
+  border-radius: 1rem;
+}
+
+.transactions__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+
+.transactions__date-formatted .transactions__date-month {
+  text-transform: capitalize;
+}
+
+.transactions__balance {
+  font-size: 14px;
+  color: #666;
+}
+
+.transactions__divider {
+  width: 33px;
+  height: 16px;
+  border-right: 1px solid #DEE4E9;
+}

@@ -1,0 +1,63 @@
+.filter {
+  width: 100%;
+}
+
+.filter__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.filter__buttons-group {
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+}
+
+.filter__button {
+  padding: 0.5rem 1rem;
+  border-radius: 1.25rem;
+  border: none;
+  background-color: var(--color-background-secondary, #F0F4F8);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.filter__button:hover {
+  background-color: var(--color-background-secondary-hover, #E1E8F0);
+}
+
+.filter__button--active {
+  background-color: var(--color-primary, #3B3B3B);
+  color: var(--color-text-inverse, #fff);
+}
+
+.filter__button--active:hover {
+  background-color: var(--color-primary-hover, #2D2D2D);
+}
+
+.filter__clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-primary, #3B3B3B);
+  padding: 0.25rem;
+  transition: opacity 0.3s ease;
+}
+
+.filter__clear:hover {
+  opacity: 0.8;
+}
+
+@media (min-width: 42.125rem) {
+  .filter__container {
+    max-width: 64.5rem;
+    margin: 0 auto;
+  }
+}
