@@ -1,7 +1,7 @@
 import React from 'react';
 import { formatCurrency, formatDateTime, truncateText } from '../../../../utils';
-import { Transaction } from '../../store';
 import TransactionIcon from '../../assets/TransactionIcon';
+import { Transaction } from '../../types';
 import './styles.css';
 
 interface TransactionItemProps {
