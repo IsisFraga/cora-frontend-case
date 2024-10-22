@@ -1,3 +1,6 @@
+import { parseISO, format } from "date-fns";
+import { ptBR } from "date-fns/locale";
+
 export const isValidCPF = (cpf: string): boolean => {
   const strCPF = cpf.replace(/[^\d]/g, '');
   if (strCPF.length !== 11) return false;
@@ -38,4 +41,23 @@ export const formatCPF = (cpf: string): string => {
 export const isValidEmail = (email: string): boolean => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
+};
+
+export const truncateText = (text: string) => {
+  const maxLength = 27;
+  return text.length > maxLength ? text.slice(0, maxLength) + " ..." : text;
+}
+
+export const formatCurrency = (amount: number) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(amount / 100);
+};
+
+export const formatDateTime = (dateString: string) => {
+  const date = parseISO(dateString);
+  const localDate = new Date(date.getTime() + date.getTimezoneOffset() * 60000);
+
+  return format(localDate, "dd MMM yyyy '-' HH:mm", { locale: ptBR });
 };
