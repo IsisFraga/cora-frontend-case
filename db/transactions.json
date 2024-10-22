@@ -11,9 +11,44 @@
           "name": "João da Silva",
           "dateEvent": "2024-02-01T08:15:17Z",
           "status": "COMPLETED"
+        },
+        {
+          "id": "abc123def456ghi987",
+          "description": "Estornos",
+          "label": "Transferência recebida",
+          "entry": "REFUND",
+          "amount": 132089087,
+          "name": "Supermercado Ana Rosa",
+          "dateEvent": "2024-02-01T09:45:37Z",
+          "status": "COMPLETED"
         }
       ],
       "date": "2024-02-01"
+    },
+    {
+      "items": [
+        {
+          "id": "xyz789pqr456mno123",
+          "description": "Pagamento de Fornecedor",
+          "label": "Transferência enviada",
+          "entry": "DEBIT",
+          "amount": 543000,
+          "name": "Tech Solutions LTDA",
+          "dateEvent": "2024-01-25T10:30:00Z",
+          "status": "COMPLETED"
+        },
+        {
+          "id": "lmn456opq789rst012",
+          "description": "Recebimento de Vendas",
+          "label": "Transferência recebida",
+          "entry": "CREDIT",
+          "amount": 892500,
+          "name": "E-commerce Solutions SA",
+          "dateEvent": "2024-01-25T14:22:15Z",
+          "status": "COMPLETED"
+        }
+      ],
+      "date": "2024-01-25"
     },
     {
       "items": [
@@ -25,6 +60,16 @@
           "amount": 2990,
           "name": "Empresa XYZ",
           "dateEvent": "2024-01-11T14:47:46Z",
+          "status": "COMPLETED"
+        },
+        {
+          "id": "hij789klm123nop456",
+          "description": "Folha de Pagamento",
+          "label": "Transferência enviada",
+          "entry": "DEBIT",
+          "amount": 1575000,
+          "name": "Recursos Humanos",
+          "dateEvent": "2024-01-11T16:30:00Z",
           "status": "COMPLETED"
         }
       ],
@@ -41,9 +86,34 @@
           "name": "Empresa ABC",
           "dateEvent": "2023-12-11T16:13:24Z",
           "status": "COMPLETED"
+        },
+        {
+          "id": "vwx123yz789abc456",
+          "description": "Pagamento de Impostos",
+          "label": "Pagamento efetuado",
+          "entry": "DEBIT",
+          "amount": 234500,
+          "name": "Receita Federal",
+          "dateEvent": "2023-12-11T09:15:00Z",
+          "status": "COMPLETED"
         }
       ],
       "date": "2023-12-11"
+    },
+    {
+      "items": [
+        {
+          "id": "qrs789tuv123wxy456",
+          "description": "Investimento em Marketing",
+          "label": "Pagamento efetuado",
+          "entry": "DEBIT",
+          "amount": 125000,
+          "name": "Digital Marketing CO",
+          "dateEvent": "2023-11-28T11:20:33Z",
+          "status": "COMPLETED"
+        }
+      ],
+      "date": "2023-11-28"
     },
     {
       "items": [
@@ -56,10 +126,60 @@
           "name": "Empresa XYZ",
           "dateEvent": "2023-10-15T18:10:21Z",
           "status": "COMPLETED"
+        },
+        {
+          "id": "def456ghi123jkl001",
+          "description": "Recebimentos por Pix ou TED",
+          "label": "Transferência recebida",
+          "entry": "CREDIT",
+          "amount": 2232089345,
+          "name": "Breiv Industries Associates Construction LTDA",
+          "dateEvent": "2023-10-15T08:03:11Z",
+          "status": "COMPLETED"
         }
       ],
       "date": "2023-10-15"
+    },
+    {
+      "items": [
+        {
+          "id": "bcd234efg567hij890",
+          "description": "Pagamento de Aluguel",
+          "label": "Pagamento agendado",
+          "entry": "DEBIT",
+          "amount": 450000,
+          "name": "Imobiliária Silva & Cia",
+          "dateEvent": "2023-10-01T10:00:00Z",
+          "status": "COMPLETED"
+        }
+      ],
+      "date": "2023-10-01"
+    },
+    {
+      "items": [
+        {
+          "id": "klm901nop234qrs567",
+          "description": "Manutenção de Equipamentos",
+          "label": "Pagamento efetuado",
+          "entry": "DEBIT",
+          "amount": 89500,
+          "name": "TechFix Manutenções",
+          "dateEvent": "2023-09-15T14:30:00Z",
+          "status": "COMPLETED"
+        },
+        {
+          "id": "stu678vwx901yz234",
+          "description": "Vendas Online",
+          "label": "Transferência recebida",
+          "entry": "CREDIT",
+          "amount": 1567800,
+          "name": "Payment Gateway SA",
+          "dateEvent": "2023-09-15T16:45:22Z",
+          "status": "COMPLETED"
+        }
+      ],
+      "date": "2023-09-15"
     }
   ],
-  "itemsTotal": 4
+  "itemsTotal": 16
 }
