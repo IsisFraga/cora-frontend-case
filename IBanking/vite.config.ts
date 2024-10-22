@@ -9,9 +9,9 @@ export default defineConfig({
       name: 'ibankingApp', 
       filename: 'remoteEntry.js',
       exposes: {
-        './App': './src/App.tsx',
+        './App': './src/App.tsx'
       },
-      shared: ['react', 'react-dom'],
+      shared: ['react', 'react-dom', 'zustand']
     }),
   ],
   build: {
@@ -20,4 +20,14 @@ export default defineConfig({
     minify: false,
     cssCodeSplit: false,
   },
+  server: {
+    port: 5002,
+    strictPort: true,
+    cors: true
+  },
+  preview: {
+    port: 5002,
+    strictPort: true,
+    cors: true
+  }
 });
