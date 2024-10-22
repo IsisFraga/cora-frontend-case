@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useIBankingStore } from './store';
+import TransactionList from './components/TransactionList';
+import FilterButtons from './components/FilterButtons';
+import { useLoginStore } from '../../Login/src/store';
+import './styles.css';
 
-interface Props {
-}
+const IBankingApp: React.FC = () => {
+  const token = useLoginStore((state) => state.token);
+  const { fetchTransactions, isLoading, error } = useIBankingStore();
 
-export const IBanking: React.FunctionComponent<Props> = () => {
+  useEffect(() => {
+    if (token) {
+      fetchTransactions(token);
+    }
+  }, [fetchTransactions, token]);
+
+  if (isLoading) return <div>Carregando...</div>;
+  if (error) return <div>Erro: {error}</div>;
+
   return (
-    <div>
-      sou ibanking 
+    <div className="ibanking-container">
+      <FilterButtons />
+      <TransactionList />
     </div>
-  )
+  );
 };
 
-
-export default IBanking;
+export default IBankingApp;

@@ -1,0 +1,14 @@
+.ibanking-container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-family: var(--font-avenir-medium);
+}
+
+@media (min-width: 1200px) {
+  .ibanking-container {
+    padding: 60px 92px 4px 316px;
+  }
+}
