@@ -6,6 +6,18 @@ const bodyParser = require("body-parser");
 const port = 3000;
 const app = express();
 
+const cors = require('cors');
+
+const corsOptions = {
+  origin: 'http://localhost:3001',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'token'],
+  credentials: true,
+  optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
+
 app.use(bodyParser.json());
 
 app.get("/health-check", (_, res) => {
@@ -26,7 +38,7 @@ app.post("/auth", (req, res) => {
 app.get("/list", (req, res) => {
   const token = req.headers.token;
 
-  if (!token || token === user.token) return res.sendStatus(401);
+  if (!token || token !== user.token) return res.sendStatus(401);
 
   return res.json(db);
 });
