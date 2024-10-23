@@ -1,7 +1,7 @@
 import React, { lazy, Suspense, useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import { Home } from './pages/Home';
-import { useLoginStore } from '../../Login/src/store';
+import { useLoginStore } from '../../Login/src/store/useLoginStore';
 
 const Todo = lazy(() => import('todoApp/App'));
 const IBanking = lazy(() => 
