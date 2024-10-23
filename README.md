@@ -24,7 +24,7 @@ Teste para vagas de frontend da [Cora](https://www.cora.com.br) :heartbeat:
     ```
 
 
-# Dados para login 
+## Dados para login 
 
 aproveite para testar também com diferentes valores, mas os que vão funcionar são esses:
 
@@ -34,20 +34,22 @@ senha: 123456
 
 [...em construção]
 
-# Como organizei minhas tarefas
+### Como organizei minhas tarefas
 - abrindo issues
 - abrindo PRs
 
-# Como pensei a arquitetura
+### Como pensei a arquitetura
 - estrutura de microfrontends
 
-# Escolhas e porquês
+### Escolhas e porquês
 - module federation
+- clean code
+- conventional commits
 
-# O que eu faria se tivesse mais tempo
+### O que eu faria se tivesse mais tempo
 - deploy da aplicação
 
-# Como eu faria se fosse na vida real trabalhando em equipe
+### Como eu faria se fosse na vida real trabalhando em equipe
 - obrigatoriedade de code review
 
 
