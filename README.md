@@ -34,10 +34,20 @@ senha: 123456
 
 [...em construção]
 
+# Como organizei minhas tarefas
+- abrindo issues
+- abrindo PRs
+
 # Como pensei a arquitetura
+- estrutura de microfrontends
 
 # Escolhas e porquês
+- module federation
 
 # O que eu faria se tivesse mais tempo
+- deploy da aplicação
+
+# Como eu faria se fosse na vida real trabalhando em equipe
+- obrigatoriedade de code review
 
 
