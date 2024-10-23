@@ -1,8 +1,5 @@
 # <img src="https://github.com/corabank/frontend-case/blob/16051123b026faaba02e6d0959fe471a6a6dac2a/src/assets/logo.svg" alt="Cora" title="Cora" width="50" /> Frontend Challenge
 
-Teste para vagas de frontend da [Cora](https://www.cora.com.br) :heartbeat:
-
-
 ## 📑 Índice
 
 - [Sobre o Projeto](#-sobre-o-projeto)
@@ -105,6 +102,7 @@ npm run start
 ```
 
 ### Credenciais para Teste
+(aproveite para testar também com diferentes valores, mas os que vão funcionar são esses)
 ```
 CPF: 35819357833
 Senha: 123456
