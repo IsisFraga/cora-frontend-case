@@ -52,7 +52,7 @@ export const TODO_LIST = [
         alguma coisa errada com o CSS dessa página :/
       </>
     ),
-    status: "pending",
+    status: "done",
     required: true,
     links: [
       {
@@ -75,7 +75,7 @@ export const TODO_LIST = [
         <strong>Info:</strong> Sinta-se livre para fazer melhorias :)
       </>
     ),
-    status: "pending",
+    status: "done",
     required: true,
     links: [
       {
@@ -98,7 +98,7 @@ export const TODO_LIST = [
         <br />O contrato esta no <strong>README.md</strong> do projeto.
       </>
     ),
-    status: "pending",
+    status: "done",
     required: true,
     links: [
       {
@@ -130,7 +130,7 @@ export const TODO_LIST = [
         <strong>CREDIT</strong>, dentro do response retornado pela api.
       </>
     ),
-    status: "pending",
+    status: "done",
     required: true,
     links: [
       {
@@ -165,7 +165,7 @@ export const TODO_LIST = [
         ObrigadaUm &#128640;
       </>
     ),
-    status: "pending",
+    status: "done",
     required: false,
   },
 ];
