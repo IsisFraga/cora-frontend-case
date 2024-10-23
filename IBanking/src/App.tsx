@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useIBankingStore } from './store';
 import TransactionList from './components/TransactionList';
 import FilterButtons from './components/FilterButtons';
-import { useLoginStore } from '../../Login/src/store';
+import { useLoginStore } from '../../Login/src/store/useLoginStore';
 import './styles.css';
 
 const IBankingApp: React.FC = () => {
